@@ -1,0 +1,7 @@
+{
+	"name": "jonjomckay/symfony-api-problem",
+	"description": "A Symfony-compatible response for the IETF Problem Details for HTTP APIs RFC",
+	"require": {
+		"symfony/http-foundation": "~2.5"
+	}
+}
