@@ -18,7 +18,9 @@ $ composer require "jonjomckay/symfony-api-problem:~1.0-dev"
 Or add the following line to your `composer.json`:
 
 ```javascript
-"jonjomckay/symfony-api-problem": "~1.0-dev"
+"require": {
+    "jonjomckay/symfony-api-problem": "~1.0-dev"
+}
 ```
 
 ## Usage
