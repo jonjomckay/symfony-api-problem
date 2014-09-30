@@ -1,13 +1,13 @@
 {
-	"name": "jonjomckay/symfony-api-problem",
-	"description": "A Symfony-compatible response for the IETF Problem Details for HTTP APIs RFC",
+    "name": "jonjomckay/symfony-api-problem",
+    "description": "A Symfony-compatible response for the IETF Problem Details for HTTP APIs RFC",
     "license": "BSD-3-Clause",
     "autoload": {
         "psr-4": {
             "JonjoMcKay\\ApiProblem\\": "src/"
         }
     },
-	"require": {
-		"symfony/http-foundation": "~2.5"
-	}
+    "require": {
+        "symfony/http-foundation": "~2.5"
+    }
 }

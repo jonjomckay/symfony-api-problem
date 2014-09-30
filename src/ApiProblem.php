@@ -52,9 +52,9 @@ class ApiProblem
      * @var array
      */
     protected $normalizedProperties = array(
-        'type'   => 'type',
+        'type' => 'type',
         'status' => 'status',
-        'title'  => 'title',
+        'title' => 'title',
         'detail' => 'detail',
     );
 
@@ -120,11 +120,11 @@ class ApiProblem
      * if the status matches any known, the title field will be selected
      * from $problemStatusTitles as a result.
      *
-     * @param int    $status
+     * @param int $status
      * @param string $detail
      * @param string $type
      * @param string $title
-     * @param array  $additional
+     * @param array $additional
      */
     public function __construct($status, $detail, $type = null, $title = null, array $additional = array())
     {
@@ -142,7 +142,7 @@ class ApiProblem
 
         $this->status = $status;
         $this->detail = $detail;
-        $this->title  = $title;
+        $this->title = $title;
 
         if (null !== $type) {
             $this->type = $type;
@@ -174,10 +174,12 @@ class ApiProblem
             return $this->additionalDetails[$normalized];
         }
 
-        throw new \InvalidArgumentException(sprintf(
-            'Invalid property name "%s"',
-            $name
-        ));
+        throw new \InvalidArgumentException(
+            sprintf(
+                'Invalid property name "%s"',
+                $name
+            )
+        );
     }
 
     /**
@@ -188,8 +190,8 @@ class ApiProblem
     public function toArray()
     {
         $problem = array(
-            'type'   => $this->type,
-            'title'  => $this->getTitle(),
+            'type' => $this->type,
+            'title' => $this->getTitle(),
             'status' => $this->getStatus(),
             'detail' => $this->getDetail(),
         );
@@ -206,7 +208,7 @@ class ApiProblem
      */
     public function setDetailIncludesStackTrace($flag)
     {
-        $this->detailIncludesStackTrace = (bool) $flag;
+        $this->detailIncludesStackTrace = (bool)$flag;
         return $this;
     }
 
@@ -301,9 +303,9 @@ class ApiProblem
         $e = $e->getPrevious();
         while ($e) {
             $previous[] = array(
-                'code'    => (int) $e->getCode(),
+                'code' => (int)$e->getCode(),
                 'message' => trim($e->getMessage()),
-                'trace'   => $e->getTrace(),
+                'trace' => $e->getTrace(),
             );
             $e = $e->getPrevious();
         }
@@ -321,7 +323,7 @@ class ApiProblem
      */
     protected function createStatusFromException()
     {
-        $e      = $this->detail;
+        $e = $this->detail;
         $status = $e->getCode();
 
         if (!empty($status)) {

@@ -14,7 +14,7 @@ class ApiProblemResponse extends JsonResponse
      * @param ApiProblem $apiProblem
      */
     public function __construct(ApiProblem $apiProblem)
-	{
-		parent::__construct($apiProblem->toArray(), $apiProblem->status);
-	}
+    {
+        parent::__construct($apiProblem->toArray(), $apiProblem->status);
+    }
 }
